@@ -280,33 +280,22 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/usr/local/Cellar/boost/1.57.0/include,
-					"/usr/local/Cellar/cpp-netlib/netlib/include",
 					/usr/local/Cellar/libtomcrypt/1.17/include,
+					/usr/local/Cellar/boost/1.57.0/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/leveldb",
-					/usr/local/Cellar/boost/1.57.0/lib,
-					"/usr/local/Cellar/cpp-netlib/netlib/lib",
 					/usr/local/Cellar/libtomcrypt/1.17/lib,
+					/usr/local/Cellar/boost/1.57.0/lib,
 				);
 				OTHER_LDFLAGS = (
 					"-lcurl",
 					"-I\"rapidjson/include\"",
-					"-lboost_system",
-					"-lboost_system-mt",
-					"-lboost_filesystem-mt",
-					"-lboost_thread-mt",
-					"-lcppnetlib-client-connections",
-					"-lcppnetlib-uri",
-					"-lcppnetlib-server-parsers",
-					"-lssl",
-					"-lcrypto",
 					"-ltomcrypt",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include";
+				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include casablanca/Release/include";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -320,33 +309,22 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/usr/local/Cellar/boost/1.57.0/include,
-					"/usr/local/Cellar/cpp-netlib/netlib/include",
 					/usr/local/Cellar/libtomcrypt/1.17/include,
+					/usr/local/Cellar/boost/1.57.0/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/leveldb",
-					/usr/local/Cellar/boost/1.57.0/lib,
-					"/usr/local/Cellar/cpp-netlib/netlib/lib",
 					/usr/local/Cellar/libtomcrypt/1.17/lib,
+					/usr/local/Cellar/boost/1.57.0/lib,
 				);
 				OTHER_LDFLAGS = (
 					"-lcurl",
 					"-I\"rapidjson/include\"",
-					"-lboost_system",
-					"-lboost_system-mt",
-					"-lboost_filesystem-mt",
-					"-lboost_thread-mt",
-					"-lcppnetlib-client-connections",
-					"-lcppnetlib-uri",
-					"-lcppnetlib-server-parsers",
-					"-lssl",
-					"-lcrypto",
 					"-ltomcrypt",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include";
+				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include casablanca/Release/include";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
