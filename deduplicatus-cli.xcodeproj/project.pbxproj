@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23D3DBE01AD8E0FB005958ED /* libcpprest.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D3DBDF1AD8E0FB005958ED /* libcpprest.2.5.dylib */; };
 		D074DCF11ACD1597008EF8D1 /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D074DCEF1ACD1597008EF8D1 /* Config.cpp */; };
 		D074DCF41ACD3127008EF8D1 /* WebAuth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D074DCF21ACD3127008EF8D1 /* WebAuth.cpp */; };
 		D074DCF71ACD313C008EF8D1 /* FileOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D074DCF51ACD313C008EF8D1 /* FileOperation.cpp */; };
@@ -33,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		23D3DBDF1AD8E0FB005958ED /* libcpprest.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcpprest.2.5.dylib; path = casablanca/build.release/Binaries/libcpprest.2.5.dylib; sourceTree = "<group>"; };
 		D074DCEF1ACD1597008EF8D1 /* Config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Config.cpp; sourceTree = "<group>"; };
 		D074DCF01ACD1597008EF8D1 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D074DCF21ACD3127008EF8D1 /* WebAuth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WebAuth.cpp; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23D3DBE01AD8E0FB005958ED /* libcpprest.2.5.dylib in Frameworks */,
 				D074DCFF1ACE8723008EF8D1 /* libleveldb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +90,7 @@
 		D0FE2FF21AC9438500DA877B = {
 			isa = PBXGroup;
 			children = (
+				23D3DBDF1AD8E0FB005958ED /* libcpprest.2.5.dylib */,
 				D074DCFE1ACE8723008EF8D1 /* libleveldb.a */,
 				D0FE2FFD1AC9438500DA877B /* deduplicatus-cli */,
 				D0FE2FFC1AC9438500DA877B /* Products */,
@@ -282,12 +286,14 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/Cellar/libtomcrypt/1.17/include,
 					/usr/local/Cellar/boost/1.57.0/include,
+					casablanca/Release/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/leveldb",
 					/usr/local/Cellar/libtomcrypt/1.17/lib,
 					/usr/local/Cellar/boost/1.57.0/lib,
+					"$(PROJECT_DIR)/casablanca/build.release/Binaries",
 				);
 				OTHER_LDFLAGS = (
 					"-lcurl",
@@ -295,7 +301,7 @@
 					"-ltomcrypt",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include casablanca/Release/include";
+				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -311,12 +317,14 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/Cellar/libtomcrypt/1.17/include,
 					/usr/local/Cellar/boost/1.57.0/include,
+					casablanca/Release/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/leveldb",
 					/usr/local/Cellar/libtomcrypt/1.17/lib,
 					/usr/local/Cellar/boost/1.57.0/lib,
+					"$(PROJECT_DIR)/casablanca/build.release/Binaries",
 				);
 				OTHER_LDFLAGS = (
 					"-lcurl",
@@ -324,7 +332,7 @@
 					"-ltomcrypt",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include casablanca/Release/include";
+				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;

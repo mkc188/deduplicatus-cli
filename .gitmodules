@@ -10,3 +10,4 @@
 [submodule "casablanca"]
 	path = casablanca
 	url = https://git.codeplex.com/casablanca
+	ignore = dirty
