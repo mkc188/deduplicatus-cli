@@ -286,6 +286,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/Cellar/boost/1.57.0/include,
 					/usr/local/Cellar/libtomcrypt/1.17/include,
+					"$(PROJECT_DIR)/curl-asio/include",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,9 +299,10 @@
 					"-lcurl",
 					"-I\"rapidjson/include\"",
 					"-ltomcrypt",
+					"-lboost_system-mt",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include curl-asio/include";
+				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -316,6 +318,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/Cellar/boost/1.57.0/include,
 					/usr/local/Cellar/libtomcrypt/1.17/include,
+					"$(PROJECT_DIR)/curl-asio/include",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -328,9 +331,10 @@
 					"-lcurl",
 					"-I\"rapidjson/include\"",
 					"-ltomcrypt",
+					"-lboost_system-mt",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include curl-asio/include";
+				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
