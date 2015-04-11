@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23FDD8881AD914F100374633 /* libcurlasio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FDD8871AD914F100374633 /* libcurlasio.a */; };
 		D074DCF11ACD1597008EF8D1 /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D074DCEF1ACD1597008EF8D1 /* Config.cpp */; };
 		D074DCF41ACD3127008EF8D1 /* WebAuth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D074DCF21ACD3127008EF8D1 /* WebAuth.cpp */; };
 		D074DCF71ACD313C008EF8D1 /* FileOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D074DCF51ACD313C008EF8D1 /* FileOperation.cpp */; };
@@ -33,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		23FDD8871AD914F100374633 /* libcurlasio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurlasio.a; path = "curl-asio/build/src/libcurlasio.a"; sourceTree = "<group>"; };
 		D074DCEF1ACD1597008EF8D1 /* Config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Config.cpp; sourceTree = "<group>"; };
 		D074DCF01ACD1597008EF8D1 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D074DCF21ACD3127008EF8D1 /* WebAuth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WebAuth.cpp; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23FDD8881AD914F100374633 /* libcurlasio.a in Frameworks */,
 				D074DCFF1ACE8723008EF8D1 /* libleveldb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +90,7 @@
 		D0FE2FF21AC9438500DA877B = {
 			isa = PBXGroup;
 			children = (
+				23FDD8871AD914F100374633 /* libcurlasio.a */,
 				D074DCFE1ACE8723008EF8D1 /* libleveldb.a */,
 				D0FE2FFD1AC9438500DA877B /* deduplicatus-cli */,
 				D0FE2FFC1AC9438500DA877B /* Products */,
@@ -288,6 +292,7 @@
 					"$(PROJECT_DIR)/leveldb",
 					/usr/local/Cellar/boost/1.57.0/lib,
 					/usr/local/Cellar/libtomcrypt/1.17/lib,
+					"$(PROJECT_DIR)/curl-asio/build/src",
 				);
 				OTHER_LDFLAGS = (
 					"-lcurl",
@@ -295,7 +300,7 @@
 					"-ltomcrypt",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include";
+				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include curl-asio/include";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -317,6 +322,7 @@
 					"$(PROJECT_DIR)/leveldb",
 					/usr/local/Cellar/boost/1.57.0/lib,
 					/usr/local/Cellar/libtomcrypt/1.17/lib,
+					"$(PROJECT_DIR)/curl-asio/build/src",
 				);
 				OTHER_LDFLAGS = (
 					"-lcurl",
@@ -324,7 +330,7 @@
 					"-ltomcrypt",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include";
+				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include curl-asio/include";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;

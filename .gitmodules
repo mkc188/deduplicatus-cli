@@ -7,3 +7,7 @@
 [submodule "librabinpoly"]
 	path = librabinpoly
 	url = https://github.com/mkc188/librabinpoly.git
+[submodule "curl-asio"]
+	path = curl-asio
+	url = https://github.com/mologie/curl-asio.git
+	ignore = dirty
