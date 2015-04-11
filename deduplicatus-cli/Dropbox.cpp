@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Peter Lam. All rights reserved.
 //
 
+//#include <iostream>
+
 #include <sstream>
 #include <string>
 #include <curl/curl.h>
@@ -15,6 +17,16 @@
 #include "WebAuth.h"
 #include "Dropbox.h"
 #include "tool.h"
+
+
+#include <cpprest/http_client.h>
+#include <cpprest/filestream.h>
+
+using namespace utility;                    // Common utilities like string conversions
+using namespace web;                        // Common features like URIs.
+using namespace web::http;                  // Common HTTP functionality
+using namespace web::http::client;          // HTTP client features
+using namespace concurrency::streams;       // Asynchronous streams
 
 using namespace std;
 using namespace rapidjson;
@@ -76,4 +88,82 @@ void Dropbox::accountInfo(Level *db, WebAuth *wa, string cloudid) {
             refreshOAuth = true;
         }
     } while( !success && !refreshOAuth );
+}
+
+void Dropbox::uploadFile(string local, string remoteFolderName) {
+//    cout << local << endl;
+    
+//    file_stream<unsigned char>::open_istream(local)
+//    .then([](pplx::task<concurrency::streams::basic_istream<unsigned char>> previousTask)
+//          {
+//              try
+//              {
+//                  auto fileStream = previousTask.get();
+//                  
+//                  // Make HTTP request with the file stream as the body.
+//                  http_client client("http://www.fourthcoffee.com");
+//                  return client.request(methods::PUT, "myfile", fileStream)
+//                  .then([fileStream](pplx::task<http_response> previousTask)
+//                        {
+//                            fileStream.close();
+//                            
+//                            std::wostringstream ss;
+//                            try
+//                            {
+//                                auto response = previousTask.get();
+//                                ss << L"Server returned returned status code " << response.status_code() << L"." << std::endl;
+//                            }
+//                            catch (const http_exception& e)
+//                            {
+//                                ss << e.what() << std::endl;
+//                            }
+//                            std::wcout << ss.str();
+//                        });
+//              }
+//              catch (const std::system_error& e)
+//              {
+//                  std::wostringstream ss;
+//                  ss << e.what() << std::endl;
+//                  std::wcout << ss.str();
+//                  
+//                  // Return an empty task. 
+//                  return pplx::task_from_result();
+//              }
+//          }).wait(); 
+    
+    //Build the proxy
+    http_client_config client_config;
+    
+    web_proxy wp(web_proxy::use_auto_discovery);
+    client_config.set_proxy(wp);
+ 
+    // Open a stream to the file to write the HTTP response body into.
+    auto fileBuffer = std::make_shared<streambuf<uint8_t>>();
+    file_buffer<uint8_t>::open("haha", std::ios::out)
+    .then([=](streambuf<uint8_t> outFile) -> pplx::task<http_response>
+          {
+              *fileBuffer = outFile; 
+              
+              // Create an HTTP request.
+              // Encode the URI query since it could contain special characters like spaces.
+              http_client client(U("http://www.bing.com/"), client_config);
+              return client.request(methods::GET, uri_builder(U("/search")).append_query(U("q"), "fuck").to_string());
+          })
+    
+    // Write the response body into the file buffer.
+    .then([=](http_response response) -> pplx::task<size_t>
+          {
+              printf("Response status code %u returned.\n", response.status_code());
+              
+              return response.body().read_to_end(*fileBuffer);
+          })
+    
+    // Close the file buffer.
+    .then([=](size_t)
+          {
+              return fileBuffer->close();
+          })
+    
+    // Wait for the entire response body to be written into the file.
+    .wait();
 }

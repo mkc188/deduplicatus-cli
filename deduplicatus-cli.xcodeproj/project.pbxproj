@@ -299,6 +299,9 @@
 					"-lcurl",
 					"-I\"rapidjson/include\"",
 					"-ltomcrypt",
+					"-lboost_system-mt",
+					"-lboost_thread-mt",
+					"-lboost_chrono-mt",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include";
@@ -330,6 +333,9 @@
 					"-lcurl",
 					"-I\"rapidjson/include\"",
 					"-ltomcrypt",
+					"-lboost_system-mt",
+					"-lboost_thread-mt",
+					"-lboost_chrono-mt",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "rapidjson/include leveldb/include";

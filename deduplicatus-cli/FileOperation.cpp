@@ -507,6 +507,13 @@ int FileOperation::putFile(Level *db, const char *path, const char *remotepath, 
             free(it->checksum);
         }
         chunkVector.clear();
+        
+         string cloudid = "b91b57d5-fa39-47f9-ad37-31d143f62c78";
+         CloudStorage *cloud = new Dropbox(db->get("clouds::account::" + cloudid + "::accessToken"));
+        // string cloudid = "a87ea3d3-84a7-42a4-b1e0-0dc5e38e5c00";
+        // CloudStorage *cloud = new OneDrive(db->get("clouds::account::" + cloudid + "::accessToken"));
+//        string cloudid = "28660fbb-9143-4a4d-99c0-125493886143";
+//        CloudStorage *cloud = new Box(db->get("clouds::account::" + cloudid + "::accessToken")); 
 
         // stdout all container file needed to upload (debug used)
         cout << endl << "Container UUID\t\t\t\t\t\t\t" << "Path" << endl;
@@ -514,7 +521,11 @@ int FileOperation::putFile(Level *db, const char *path, const char *remotepath, 
              it != containerToBeUpload.end();
              it++ ) {
             cout << it->first << "\t" << it->second << endl;
+            
+//            cloud->uploadFile(it->second, ".deduplicatus");
         }
+        
+        cloud->uploadFile("7d596077-4ebd-4441-ad3f-d91ad9fcc25b-cache/f54053f2-e781-4b30-a911-eb404e1f08c8.container", ".deduplicatus");
 
         // commit changes into leveldb
         leveldb::WriteOptions write_options;
