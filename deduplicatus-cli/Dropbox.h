@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "CloudStorage.h"
+#include "FileTransfer.h"
 
 using namespace std;
 
@@ -20,10 +21,12 @@ public:
     static string type() { return "dropbox"; }
     string brandName() override;
     void accountInfo(Level *, WebAuth *, string) override;
+    void uploadFile(string, string) override;
 
 private:
     string path_base;
     string path_account_info;
+    FileTransfer *fileTransfer;
 };
 
 #endif /* defined(__deduplicatus_cli__Dropbox__) */

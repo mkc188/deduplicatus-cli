@@ -15,6 +15,7 @@
 #include "WebAuth.h"
 #include "Dropbox.h"
 #include "tool.h"
+#include "FileTransfer.h"
 
 using namespace std;
 using namespace rapidjson;
@@ -26,6 +27,7 @@ Dropbox::Dropbox(string token) {
     // define cloud storage endpoints
     path_base = "https://api.dropbox.com/1";
     path_account_info = "/account/info";
+    this->fileTransfer = new FileTransfer();
 }
 
 string Dropbox::brandName() {
@@ -76,4 +78,8 @@ void Dropbox::accountInfo(Level *db, WebAuth *wa, string cloudid) {
             refreshOAuth = true;
         }
     } while( !success && !refreshOAuth );
+}
+
+void Dropbox::uploadFile(string local, string remoteFolderName) {
+    fileTransfer->uploadDropbox(local, remoteFolderName);
 }

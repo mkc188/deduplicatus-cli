@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23FDD8881AD914F100374633 /* libcurlasio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FDD8871AD914F100374633 /* libcurlasio.a */; };
+		23FDD88B1AD9293C00374633 /* FileTransfer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23FDD8891AD9293C00374633 /* FileTransfer.cpp */; };
 		D074DCF11ACD1597008EF8D1 /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D074DCEF1ACD1597008EF8D1 /* Config.cpp */; };
 		D074DCF41ACD3127008EF8D1 /* WebAuth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D074DCF21ACD3127008EF8D1 /* WebAuth.cpp */; };
 		D074DCF71ACD313C008EF8D1 /* FileOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D074DCF51ACD313C008EF8D1 /* FileOperation.cpp */; };
@@ -35,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		23FDD8871AD914F100374633 /* libcurlasio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurlasio.a; path = "curl-asio/build/src/libcurlasio.a"; sourceTree = "<group>"; };
+		23FDD8891AD9293C00374633 /* FileTransfer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileTransfer.cpp; sourceTree = "<group>"; };
+		23FDD88A1AD9293C00374633 /* FileTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileTransfer.h; sourceTree = "<group>"; };
 		D074DCEF1ACD1597008EF8D1 /* Config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Config.cpp; sourceTree = "<group>"; };
 		D074DCF01ACD1597008EF8D1 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D074DCF21ACD3127008EF8D1 /* WebAuth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WebAuth.cpp; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 				D0D128C31AD5393B00709F4A /* rabinpoly.c */,
 				D0D128C41AD5393B00709F4A /* rabinpoly.h */,
 				D0D128C61AD657F800709F4A /* Chunk.h */,
+				23FDD8891AD9293C00374633 /* FileTransfer.cpp */,
+				23FDD88A1AD9293C00374633 /* FileTransfer.h */,
 			);
 			path = "deduplicatus-cli";
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				D074DCF41ACD3127008EF8D1 /* WebAuth.cpp in Sources */,
 				D074DCF11ACD1597008EF8D1 /* Config.cpp in Sources */,
 				D074DD1F1AD2B68F008EF8D1 /* Box.cpp in Sources */,
+				23FDD88B1AD9293C00374633 /* FileTransfer.cpp in Sources */,
 				D074DCFA1ACD3E7D008EF8D1 /* tool.cpp in Sources */,
 				D074DCF71ACD313C008EF8D1 /* FileOperation.cpp in Sources */,
 			);

@@ -508,6 +508,15 @@ int FileOperation::putFile(Level *db, const char *path, const char *remotepath, 
         }
         chunkVector.clear();
 
+         string cloudid = "b91b57d5-fa39-47f9-ad37-31d143f62c78";
+         CloudStorage *cloud = new Dropbox(db->get("clouds::account::" + cloudid + "::accessToken"));
+        // string cloudid = "a87ea3d3-84a7-42a4-b1e0-0dc5e38e5c00";
+        // CloudStorage *cloud = new OneDrive(db->get("clouds::account::" + cloudid + "::accessToken"));
+//        string cloudid = "28660fbb-9143-4a4d-99c0-125493886143";
+//        CloudStorage *cloud = new Box(db->get("clouds::account::" + cloudid + "::accessToken"));
+
+        cloud->uploadFile("7d596077-4ebd-4441-ad3f-d91ad9fcc25b-cache/a575dd18-1230-4e7c-bce4-f879fec08801.container", ".deduplicatus");
+
         // stdout all container file needed to upload (debug used)
         cout << endl << "Container UUID\t\t\t\t\t\t\t" << "Path" << endl;
         for( map<string, string>::iterator it = containerToBeUpload.begin();
